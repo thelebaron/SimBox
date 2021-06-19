@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
+using Rules;
 using Unity.Collections;
 using Unity.Entities;
-using Unity.Mathematics;
 using UnityEngine;
 
 namespace Sandbox
@@ -21,6 +21,7 @@ namespace Sandbox
     // 
     /*
            Entity as Resource
+           
       Entity 21
       Ore Component { Value = 100 }
       
@@ -28,9 +29,15 @@ namespace Sandbox
       Ore Component { Value = 1 }
       Steel Component { Value = 50 }
       
+      
            Entity as Unit
+           
       Ore Component { Value = 101 }
       Steel Component { Value = 50 }
+      
+      
+           Entity as Rule
+      
       Ore Rule { In = 10 }
       Steel Rule { Out = 2 }
       Currency Rule { Out = 2, Global = true }
@@ -40,19 +47,26 @@ namespace Sandbox
       
      */
 
+    struct Rule
+    {
+        public FixedList32<Steel> inList;
+    }
+
+    
 
     public struct Enabled : IComponentData 
     {
         
     }
     
+    // this is a very brittle setup, need flexibility
     [Serializable]
-    public class Rule
+    public struct UnitTestRule
     {
-        public FixedString32 StringValue;
-        public Entity EntityValue;
-        public int NumberValue;
-        public float3 Float3Value;
+        public int SteelBin;
+        public Steel Steel;
+        public float Rate;
+        public int Apply;
     }
     
     [ExecuteAlways]
@@ -67,12 +81,16 @@ namespace Sandbox
                 return;
             }
 
-            var rule = new Rule
+            var rule = new UnitTestRule
             {
-                StringValue = "Entity",
-                EntityValue = Entity.Null,
-                NumberValue = 31,
-                Float3Value = new float3(1,0,1)
+                SteelBin = 31,
+                Steel = new Steel
+                {
+                    In    = 1,
+                    Out   = 0
+                },
+                Rate = 2,
+                Apply = 1
             };
                 
             

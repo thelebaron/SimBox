@@ -1,7 +1,13 @@
-﻿namespace UnityTemplateProjects
+﻿using System;
+
+namespace Rules
 {
-    public interface IRule
+
+    [Serializable]
+    public struct Steel
     {
-        
+        public int In;
+        public int Out;
     }
+
 }
