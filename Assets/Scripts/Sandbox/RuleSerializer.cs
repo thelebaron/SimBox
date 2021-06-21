@@ -49,22 +49,19 @@ namespace Sandbox
 
     struct Rule
     {
-        public FixedList32<Steel> inList;
+        public FixedList32<SteelRule> inList;
     }
 
     
 
-    public struct Enabled : IComponentData 
-    {
-        
-    }
+
     
     // this is a very brittle setup, need flexibility
     [Serializable]
     public struct UnitTestRule
     {
         public int SteelBin;
-        public Steel Steel;
+        public SteelRule steelRule;
         public float Rate;
         public int Apply;
     }
@@ -84,10 +81,10 @@ namespace Sandbox
             var rule = new UnitTestRule
             {
                 SteelBin = 31,
-                Steel = new Steel
+                steelRule = new SteelRule
                 {
-                    In    = 1,
-                    Out   = 0
+                    Consume    = 1,
+                    Produce   = 0
                 },
                 Rate = 2,
                 Apply = 1
