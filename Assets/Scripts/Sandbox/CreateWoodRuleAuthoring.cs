@@ -1,4 +1,5 @@
 ﻿using Rules;
+using Sandbox.Rules;
 using Unity.Entities;
 using Unity.Transforms;
 using UnityEngine;
@@ -41,14 +42,14 @@ namespace Sandbox
             dstManager.AddComponentData(ruleEntity, new RuleEnabled());
             dstManager.AddComponentData(ruleEntity, new Apply {Value = apply});
             dstManager.AddComponentData(ruleEntity, new Rate {Value = rate});
-            dstManager.AddComponentData(ruleEntity, new CreateWoodRule
+            dstManager.AddComponentData(ruleEntity, new CreateWood
             {
-                Input = new CreateWoodRule.Inputs
+                Input = new CreateWood.Inputs
                 {
                     People = peopleIn,
                     Money = moneyIn
                 },
-                Output = new CreateWoodRule.Outputs
+                Output = new CreateWood.Outputs
                 {
                     People = peopleOut,
                     Wood = woodOut

@@ -1,12 +1,10 @@
 ﻿using System;
 using Unity.Entities;
-using UnityEngine;
 
-namespace Sandbox
+namespace Sandbox.Rules
 {
-
     [Serializable]
-    public struct CreateWoodRule : IComponentData
+    public struct CreateWood : IComponentData
     {
         public Inputs Input;
         public Outputs Output;
@@ -71,15 +69,6 @@ namespace Sandbox
         public void OnSuccess(ref Data data)
         {
             // maybe make smoke?
-        }
-
-        /// <summary>
-        /// Conversion
-        /// </summary>
-        public static void Conversion(Entity unitEntity, EntityManager dstManager,
-            GameObjectConversionSystem conversionSystem, GameObject gameObject)
-        {
-            
         }
     }
     

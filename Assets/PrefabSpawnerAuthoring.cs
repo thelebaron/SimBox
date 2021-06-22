@@ -26,10 +26,8 @@ public struct PrefabSpawner : IComponentData
     public Entity Prefab;
 }
 
-
 public class PrefabSpawnerSystem : SystemBase
 {
-    
     protected override void OnUpdate()
     {
         var pos = new float3 {x = Random.Range(-55, 55), y = 0, z = Random.Range(-55, 55)};
