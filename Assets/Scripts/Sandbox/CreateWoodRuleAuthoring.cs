@@ -1,9 +1,11 @@
 ﻿using Rules;
 using Unity.Entities;
+using Unity.Transforms;
 using UnityEngine;
 
 namespace Sandbox
 {
+    [UpdateAfter(typeof(GameObjectConversionSystem))]
     public class CreateWoodRuleAuthoring : MonoBehaviour, IConvertGameObjectToEntity
     {
         public int peopleIn = 2;
@@ -19,19 +21,17 @@ namespace Sandbox
             dstManager.AddComponentData(entity, Resources.People.Default);
             dstManager.AddComponentData(entity, Resources.Money.Default);
             
+            conversionSystem.DeclareLinkedEntityGroup(gameObject);
             
             var ruleEntity = conversionSystem.CreateAdditionalEntity(gameObject);
-            if (dstManager.HasComponent<LinkedEntityGroup>(entity))
+            //var linkedEntityGroup = dstManager.GetBuffer<LinkedEntityGroup>(entity);
+            //linkedEntityGroup.Add(new LinkedEntityGroup {Value = entity});
+            //linkedEntityGroup.Add(new LinkedEntityGroup {Value = ruleEntity});
+            
+            /*foreach (Transform child in transform)
             {
-                var linkedEntityGroup = dstManager.GetBuffer<LinkedEntityGroup>(entity);
-                linkedEntityGroup.Add(new LinkedEntityGroup {Value = ruleEntity});
-            }
-            else
-            {
-                dstManager.AddBuffer<LinkedEntityGroup>(entity);
-                var linkedEntityGroup = dstManager.GetBuffer<LinkedEntityGroup>(entity);
-                linkedEntityGroup.Add(new LinkedEntityGroup {Value = ruleEntity});
-            }
+                linkedEntityGroup.Add(new LinkedEntityGroup {Value = conversionSystem.TryGetPrimaryEntity(child)});
+            }*/
             
 #if UNITY_EDITOR
             dstManager.SetName(ruleEntity, "CreateWoodRule");            
