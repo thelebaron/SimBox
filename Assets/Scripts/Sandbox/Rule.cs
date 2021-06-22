@@ -3,21 +3,11 @@ using Unity.Entities;
 
 namespace Rules
 {
-    public struct Enabled : IComponentData 
+    public struct RuleEnabled : IComponentData 
     {
         
     }
-
-    public struct State : IComponentData
-    {
-        public enum CurrentState
-        {
-            Waiting, Update, Fail, Success
-        }
-
-        public Entity Unit;
-        public CurrentState Value;
-    }
+    
     
     [Serializable]
     public struct Apply : IComponentData
@@ -29,22 +19,18 @@ namespace Rules
     public struct Rate : IComponentData
     {
         public int Value;
+        public int InternalValue;
+
+        public bool ShouldRun()
+        {
+            InternalValue++;
+            if (Value.Equals(InternalValue))
+            {
+                InternalValue = 0;
+                return true;
+            }
+
+            return false;
+        }
     }
-    
-    [Serializable]
-    public struct SteelRule : IComponentData
-    {
-        public int Consume;
-        public int Produce;
-    }
-    
-    [Serializable]
-    public struct Ore_Rule : IComponentData
-    {
-        public int In;
-        public int Out;
-    }
-    
-    
-    
 }

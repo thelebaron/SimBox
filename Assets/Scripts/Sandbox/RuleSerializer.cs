@@ -47,10 +47,7 @@ namespace Sandbox
       
      */
 
-    struct Rule
-    {
-        public FixedList32<SteelRule> inList;
-    }
+
 
     
 
@@ -61,7 +58,6 @@ namespace Sandbox
     public struct UnitTestRule
     {
         public int SteelBin;
-        public SteelRule steelRule;
         public float Rate;
         public int Apply;
     }
@@ -81,11 +77,6 @@ namespace Sandbox
             var rule = new UnitTestRule
             {
                 SteelBin = 31,
-                steelRule = new SteelRule
-                {
-                    Consume    = 1,
-                    Produce   = 0
-                },
                 Rate = 2,
                 Apply = 1
             };

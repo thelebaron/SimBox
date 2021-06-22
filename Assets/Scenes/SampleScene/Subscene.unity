@@ -325,8 +325,9 @@ GameObject:
   - component: {fileID: 1321991740}
   - component: {fileID: 1321991741}
   - component: {fileID: 1321991742}
+  - component: {fileID: 1321991743}
   m_Layer: 0
-  m_Name: FactoryUnit
+  m_Name: Wood Mill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -361,6 +362,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f256d9e8324c1e9ee89c6f8fe9f6bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RuleName: 'Wood MIll Rule '
+  Rate: 2
+  Apply: 1
+  WoodIn: 1
+  WoodInValue: 5
+  WoodOut: 0
+  WoodOutValue: 0
+  HarvestWoodRule:
+    DataInput:
+      People: 2
+      Money: 1
+    DataOutput:
+      People: 2
+      Wood: 2
+    Rate: 10
+    Apply: 1
 --- !u!114 &1321991742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,6 +391,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ConversionMode: 0
+--- !u!114 &1321991743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321991739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f256d9e8324c1e9ee89c6f8fe9f6bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RuleName: Steel Rule
+  Rate: 2
+  Apply: 1
+  WoodIn: 0
+  WoodInValue: 0
+  WoodOut: 0
+  WoodOutValue: 0
+  HarvestWoodRule:
+    DataInput:
+      People: 0
+      Money: 0
+    DataOutput:
+      People: 0
+      Wood: 0
+    Rate: 0
+    Apply: 0
 --- !u!1 &1759759447
 GameObject:
   m_ObjectHideFlags: 0
