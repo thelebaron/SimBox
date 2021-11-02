@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7027803167968201296, guid: 021d78b94518f174492bb773d44aa3d3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.27
       objectReference: {fileID: 0}
     - target: {fileID: 7027803167968201296, guid: 021d78b94518f174492bb773d44aa3d3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7027803167968201296, guid: 021d78b94518f174492bb773d44aa3d3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 7027803167968201296, guid: 021d78b94518f174492bb773d44aa3d3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -178,6 +178,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wood Mill
       objectReference: {fileID: 0}
+    - target: {fileID: 7027803167968201303, guid: 021d78b94518f174492bb773d44aa3d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027803168540211259, guid: 021d78b94518f174492bb773d44aa3d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027803169288060358, guid: 021d78b94518f174492bb773d44aa3d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027803169742281810, guid: 021d78b94518f174492bb773d44aa3d3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 021d78b94518f174492bb773d44aa3d3, type: 3}
 --- !u!1001 &8167312147496976311
@@ -191,6 +207,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: eb501ea7a0899004ba6c7d5eda796007, type: 2}
+    - target: {fileID: 8167312146578713374, guid: 7b8f0cd1957d8674a98dc977e7e1b521, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8167312148470266252, guid: 7b8f0cd1957d8674a98dc977e7e1b521, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -238,6 +258,10 @@ PrefabInstance:
     - target: {fileID: 8167312148470266255, guid: 7b8f0cd1957d8674a98dc977e7e1b521, type: 3}
       propertyPath: m_Name
       value: House
+      objectReference: {fileID: 0}
+    - target: {fileID: 8167312148470266255, guid: 7b8f0cd1957d8674a98dc977e7e1b521, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b8f0cd1957d8674a98dc977e7e1b521, type: 3}

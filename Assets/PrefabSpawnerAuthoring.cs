@@ -30,13 +30,18 @@ public class PrefabSpawnerSystem : SystemBase
 {
     protected override void OnUpdate()
     {
-        var pos = new float3 {x = Random.Range(-55, 55), y = 0, z = Random.Range(-55, 55)};
-        
-        Entities.ForEach((Entity entity, ref PrefabSpawner spawner) =>
+        for (int i = 0; i < 5; i++)
         {
-            var e = EntityManager.Instantiate(spawner.Prefab);
-            EntityManager.SetComponentData(e, new Translation{Value = pos});
+            var pos = new float3 {x = Random.Range(-55, 55), y = 0, z = Random.Range(-55, 55)};
+        
+            Entities.ForEach((Entity entity, ref PrefabSpawner spawner) =>
+            {
+                var e = EntityManager.Instantiate(spawner.Prefab);
+                EntityManager.SetComponentData(e, new Translation{Value = pos});
             
-        }).WithStructuralChanges().Run();
+            }).WithStructuralChanges().Run();
+        }
+
+        Enabled = false;
     }
 }
